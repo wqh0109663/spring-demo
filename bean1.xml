@@ -7,6 +7,7 @@
         <!--属性注入方法一   name标签实际上就是set方法的名字-->
         <property name="name" value="你好"/>
         <!--如果需要注入的属性值是list就是下面的形式-->
+
         <!--<property name="list">
             <list>&lt;!&ndash;map  啊 什么pros 啊 都差不多&ndash;&gt;
                 <value type="int" >100</value>
