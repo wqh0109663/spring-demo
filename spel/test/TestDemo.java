@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 /**
  * Created by wqh on 2018/2/6.
  */
-public class Test {
+public class TestDemo {
     public static void main(String[] args) {
       ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean-spel.xml");
         Person person = (Person)applicationContext.getBean("person");
