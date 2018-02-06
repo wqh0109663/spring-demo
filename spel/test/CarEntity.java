@@ -3,9 +3,9 @@ package spel.test;
 /**
  * Created by wqh on 2018/2/6.
  */
-public class Car {
+public class CarEntity {
     private  String carname;
-    private int carPrice ;
+    private double carPrice ;
 
     public String getCarname() {
         return carname;
@@ -15,17 +15,17 @@ public class Car {
         this.carname = carname;
     }
 
-    public int getCarPrice() {
+    public double getCarPrice() {
         return carPrice;
     }
 
-    public void setCarPrice(int carPrice) {
+    public void setCarPrice(double carPrice) {
         this.carPrice = carPrice;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "CarEntity{" +
                 "carname='" + carname + '\'' +
                 ", carPrice=" + carPrice +
                 '}';

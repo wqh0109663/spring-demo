@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" class="spel.test.Person" >
+        <!--可以使用spel  使用字面值也可以完成赋值-->
+        <property name="age" value="#{'55'}"/>
+        <property name="name" value="老王"/>
+        <!--使用spel 引用其他的bean-->
+        <property name="carEntity" value="#{carentity}"/>
+        <!--使用spel 引用其他的bean的某一个属性的值-->
+        <property name="carprice" value="#{carentity.carPrice}"/>
+
+    </bean>
+    <bean id="carentity" class="spel.test.CarEntity">
+        <property name="carname" value="audi"/>
+        <!--使用spel 使用静态引用来完成赋值-->
+        <property name="carPrice" value="#{T(java.lang.Math).PI * 100}"/>
+    </bean>
+</beans>

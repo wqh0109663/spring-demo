@@ -25,7 +25,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "CarEntity{" +
                 "carName='" + carName + '\'' +
                 ", price=" + price +
                 '}';
