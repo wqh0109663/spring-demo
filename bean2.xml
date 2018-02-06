@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--scope="singleton" 默认就是单例的 IOC容器初始化时就创建
+    而scope="singleton"多实例的
+    IOC初始化时不创建 在调用时就创建-->
+    <bean id="car" class="org.entity.Car"  >
+        <property name="carName" value="Audi"/>
+        <property name="price" value="50000"/>
+    </bean>
+    <!--可以使用bean的继承 使用到parent属性 -->
+    <!--使用抽象bean bean在IOC容器中不能被实例化 只能被其他bean继承 还可以指定class属性用于继承-->
+   <!-- <bean id="car2" parent="car" abstract="true">
+        <property name="price" value="1000"/>
+    </bean>-->
+    <bean id="car2" parent="car">
+        <property name="price" value="1000"/>
+    </bean>
+</beans>
