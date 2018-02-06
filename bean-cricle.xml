@@ -9,6 +9,9 @@
         <property name="name" value="老吴"/>
         <property name="age" value="23"/>
     </bean>
+    <!--实现BeanPostProcessor接口  不需要-->
+    <!--配置bean的后置处理器 是要处理所有的bean 所以需要在类里面做健壮性判断-->
+    <bean class="vo.circle.MyBeanPostProcessor"/>
 
 
 </beans>
