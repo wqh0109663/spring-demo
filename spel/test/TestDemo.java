@@ -14,6 +14,5 @@ public class TestDemo {
         CarEntity carEntity = applicationContext.getBean(CarEntity.class);
         String string = carEntity.toString();
         System.out.println(string);
-
     }
 }

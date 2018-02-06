@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="newPerson" class="vo.circle.NewPerson"
+          init-method="init2" destroy-method="destory2">
+        <!--创建bean的生命周期 init method 是初始化时调用的 同理destroy时bean销毁时调用
+        这两个方法是在Javabean实体类里面声明的-->
+        <property name="name" value="老吴"/>
+        <property name="age" value="23"/>
+    </bean>
+
+
+</beans>
