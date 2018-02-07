@@ -15,6 +15,9 @@ public class TestStatic {
         Cars car1 = (Cars)applicationContext.getBean("car1");
         String string1 = car1.toString();
         System.out.println(string1);
+        Cars car2 = (Cars)applicationContext.getBean("car2");
+        String string2 = car2.toString();
+        System.out.println(string2);
     }
 
 
