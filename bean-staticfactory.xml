@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="staticFactoryBean" class="statics.test.StaticBeanFactory"
+          factory-method="getCars">
+        <!--这种是通过静态工厂来配置bean 不是配置实例 -->
+        <!-- constructor-arg 如果静态工厂需要传参 就用这种
+        factory-method 是静态获取对象的那个方法
+        -->
+        <constructor-arg value="baoma"/>
+    </bean>
+    <!-- 实例工厂的配置-->
+    <bean id="carInstance" class="statics.test.InstanceFactory"/>
+    <bean id="car1" factory-bean="carInstance" factory-method="getCar">
+        <!--通过实例工厂来创建bean-->
+        <constructor-arg value="baoma"/>
+    </bean>
+
+</beans>
