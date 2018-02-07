@@ -12,6 +12,5 @@ public class TestCircleDemo {
         System.out.println(newPerson);
         //关闭IOC容器
         applicationContext.close();
-
     }
 }
