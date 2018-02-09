@@ -13,6 +13,12 @@
                 <value type="int" >100</value>
             </list>
         </property>-->
+        <!--properties 的注入有点特别-->
+        <!--<property name="a">
+            <props>
+                <prop key="key">值</prop>
+            </props>
+        </property>-->
     </bean>
     <bean id="demo3" class="it.huanzi.HelloTest" p:name="haha">
         <!--这个bean还可以使用p命名空间-->
