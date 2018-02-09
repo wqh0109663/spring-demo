@@ -4,21 +4,24 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-<!--<context:component-scan base-package="aop.test"/>-->
+    <!--<context:component-scan base-package="aop.test"/>-->
     <bean id="person" class="aop.test.Person"/>
     <bean id="newPerson" class="aop.test.NewPerson"/>
     <!--配置aop-->
     <aop:config>
-        <!--配置切入点-->
+        <!--配置切入点 第一个*是访问修饰符 用*表示是所有的都可以 后面是包名加方法名-->
         <aop:pointcut id="pointcut1" expression="execution(* aop.test.Person.*(..))"/>
         <!--配置切面 把增强用到方法上面-->
         <aop:aspect ref="newPerson">
-            <!--配置增强类型 method里面是用到的那个前置的方法（这个里面是前置的，方法是类里面的方法）-->
+            <!--配置增强类型 method里面是用到的那个前置增强的方法（这个里面是前置的，方法是类里面的方法）-->
             <aop:before method="beforeEat" pointcut-ref="pointcut1"/>
+            <!--后置增强-->
+            <!--<aop:after method=""-->
+            <!--环绕增强-->
+            <aop:around method="around" pointcut-ref="pointcut1"/>
         </aop:aspect>
+
     </aop:config>
-
-
 
 
 </beans>
