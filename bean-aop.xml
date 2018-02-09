@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+<!--<context:component-scan base-package="aop.test"/>-->
+    <bean id="person" class="aop.test.Person"/>
+    <bean id="newPerson" class="aop.test.NewPerson"/>
+    <!--配置aop-->
+    <aop:config>
+        <!--配置切入点-->
+        <aop:pointcut id="pointcut1" expression="execution(* aop.test.Person.*(..))"/>
+        <!--配置切面 把增强用到方法上面-->
+        <aop:aspect ref="newPerson">
+            <!--配置增强类型 method里面是用到的那个前置的方法（这个里面是前置的，方法是类里面的方法）-->
+            <aop:before method="beforeEat" pointcut-ref="pointcut1"/>
+        </aop:aspect>
+    </aop:config>
+
+
+
+
+</beans>

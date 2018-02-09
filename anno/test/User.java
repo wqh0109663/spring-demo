@@ -5,8 +5,9 @@ import org.springframework.stereotype.Component;
 /**
  * Created by wqh on 2018/2/8.
  * controller web层
- * service 业务层  三个功能一样
+ * service 业务层  四个功能一样
  * repository 持久层
+ * 还有下面的一个注解
  */
 
 @Component(value = "user")
