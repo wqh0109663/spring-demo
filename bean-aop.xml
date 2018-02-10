@@ -22,6 +22,8 @@
         </aop:aspect>
 
     </aop:config>
+    <!--开启aop操作 自动代理-->
+    <aop:aspectj-autoproxy/>
 
 
 </beans>
