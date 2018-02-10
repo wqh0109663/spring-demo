@@ -1,11 +1,12 @@
 package aop.test;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by wqh on 2018/2/9.
  */
-
+@Component
 public class NewPerson {
     //前置增强
     public void beforeEat() {

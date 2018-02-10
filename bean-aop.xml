@@ -4,9 +4,9 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-    <!--<context:component-scan base-package="aop.test"/>-->
-    <bean id="person" class="aop.test.Person"/>
-    <bean id="newPerson" class="aop.test.NewPerson"/>
+    <context:component-scan base-package="aop.test"/>
+    <!--<bean id="person" class="aop.test.Person"/>
+    <bean id="newPerson" class="aop.test.NewPerson"/>-->
     <!--配置aop-->
     <aop:config>
         <!--配置切入点 第一个*是访问修饰符 用*表示是所有的都可以 后面是包名加方法名-->
